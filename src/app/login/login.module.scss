@@ -1,0 +1,142 @@
+.noShowPage {
+  display: none;
+}
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 120px 7px 0;
+.login__block {
+  max-width: 100%;
+}
+  &__container {
+    max-width: 100%;
+  }
+
+  &__block__container {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  &__text {
+    font-size: 23px;
+    font-weight: 500;
+  }
+
+  &__line__textor__block {
+    display: flex;
+    justify-content: center;
+    opacity: 0.4;
+  }
+
+  &__textor {
+    padding: 0 10px;
+    font-weight: 600;
+
+  }
+
+  &__line {
+    width: 170px;
+    border-top: 2px solid black;
+    margin-top: 25px;
+  }
+
+
+  &__block {
+    display: flex;
+    max-width: 100%;
+    height: 100%;
+    margin-top: 30px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 0 20px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    &__input__email {
+      max-width: 100%;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    &__input__password {
+      width: 100%;
+      margin-top: 20px;
+      height: 42px;
+      border-radius: 5px;
+      font-size: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      padding: 10px 35px 10px 10px;
+    }
+
+    &__input__password__block {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 10px;
+      max-width: 400px;
+      height: 30px;
+
+    }
+
+    &__password__status__img {
+      cursor: pointer;
+      position: relative;
+      bottom: 35px;
+    }
+
+    &__button__signin {
+      margin-bottom: 10px;
+      color: white;
+      background-color: #8E0F1B;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+.google {
+margin-top: 5px;
+
+  &__login__button {
+    margin: 0 auto;
+    display: flex;
+    gap: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+
+  }
+}
+
+
+.signup__text {
+  margin-top: 20px;
+  font-size: 18px;
+}
+.errorMsg {
+  color: #8E0F1B;
+  opacity: 0.8;
+  font-style: italic;
+  position: relative;
+  bottom: 20px;
+  font-size: 17px;
+}
+.errorMsgNoShow {
+  display: none;
+}

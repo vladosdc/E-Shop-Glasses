@@ -1,0 +1,144 @@
+.settings {
+margin-top: 120px;
+  margin-right: 10px;
+  margin-left: 10pxz;
+  &__text {
+    text-align: center;
+    margin-left: 25px;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  &__container {
+
+  }
+
+ &__passwordNotShow {
+   display: none;
+ }
+  form {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__name {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    &__input {
+      width: 400px;
+      height: 40px;
+      font-size: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      padding-left: 5px;
+      margin-left: 10px;
+      outline: none;
+      &Disabled {
+        width: 400px;
+        height: 40px;
+        outline: none;
+        font-size: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        padding-left: 5px;
+        margin-left: 10px;
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+    }
+
+  }
+  &__email {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+
+
+
+    &__input {
+      width: 400px;
+      height: 40px;
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      padding-left: 5px;
+      margin-left: 10px;
+      outline: none;
+      font-size: 16px;
+      &Disabled {
+        width: 400px;
+        height: 40px;
+        outline: none;
+        font-size: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        padding-left: 5px;
+        margin-left: 10px;
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+    }
+  }
+  &__password {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    &__input {
+      width: 400px;
+      height: 40px;
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      padding-left: 5px;
+      margin-left: 10px;
+      outline: none;
+      font-size: 16px;
+    }
+  }
+
+
+  &__input__password__block {
+    position: relative;
+    right: 25px;
+    top: 2px;
+
+  }
+
+  &__password__status__img {
+    cursor: pointer;
+  }
+}
+.saveData {
+  &Btn {
+    margin-bottom: 10px;
+    color: white;
+    background-color: #8E0F1B;
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  &BtnDisabled {
+    margin-bottom: 10px;
+    color: white;
+    background-color: rgba(142, 15, 27, 0.6);
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: not-allowed;
+    text-transform: uppercase;
+  }
+}
+
+.noAccessGoogle {
+  color: #8E0F1B;
+  max-width: 400px;
+  text-align: center;
+  font-style: italic;
+}
+

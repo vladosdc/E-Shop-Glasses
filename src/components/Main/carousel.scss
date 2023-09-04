@@ -1,0 +1,14 @@
+.carousel-indicators  {
+  display: none;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 300ms;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  transition: 300ms;
+}

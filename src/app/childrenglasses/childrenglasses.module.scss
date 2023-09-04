@@ -1,0 +1,90 @@
+.childrenglasses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 140px 10px 20px;
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1600px;
+    gap: 30px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 280px;
+    height: 363px;
+    border: 1px solid black;
+    border-radius: 20px;
+  }
+
+  &__price__cart__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+  &__name {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  // &__photo {
+  //   width: 178px;
+  // }
+
+  &__price {
+  }
+
+  &__buy__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 250px;
+    transition: 400ms;
+  }
+
+  &__buy__btn:hover {
+    background-color: rgba(142, 15, 27, 0.8);
+    border: none;
+    transition: 400ms;
+    color: white;
+  }
+
+  &__cart {
+
+  }
+
+
+
+  @media screen and (max-width: 1120px) {
+    & {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 80px;
+    }
+  }
+
+
+
+}
+
+.confirmOrderText {
+  font-style: italic;
+  padding-top: 10px;
+  color: rgba(142, 15, 27, 0.7);
+  font-size: 14px;
+}
