@@ -103,7 +103,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 1); /* Замените на цвет вашего фона */
+  background-color: rgba(255, 255, 255, 1); 
   z-index: 1000;
 
 
@@ -161,4 +161,9 @@
 }
 .listItemsNoShow {
   display: none;
+}
+
+.active {
+  color: #8E0F1B;
+  transition: 300ms;
 }

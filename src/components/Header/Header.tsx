@@ -9,12 +9,13 @@ import Link from "next/link";
 import {useEffect, useState} from "react";
 import {onAuthStateChanged} from "@firebase/auth";
 import {auth} from "@/firebase/firebase";
-import {useRouter} from "next/navigation";
+import {useRouter, usePathname} from "next/navigation";
 
 
 const Header = () => {
 
     const router = useRouter()
+    const pathname = usePathname()
     const [pathToAccount, setPathToAccount] = useState(false)
     const [menu, setMenu] = useState<boolean>(true)
 
@@ -50,13 +51,13 @@ const Header = () => {
                                    priority={true}/>
                     </div>
                     <ul className={styles.header__list}>
-                        <li className={styles.header__list__item}
+                        <li className={`${styles.header__list__item} ${pathname === '/sunglasses' ? styles.active : ''}`}
                             onClick={() => router.push('/sunglasses')}>SUNGLASSES
                         </li>
-                        <li className={styles.header__list__item} onClick={() => router.push("/eyeglasses")}>EYEGLASSES</li>
-                        <li className={styles.header__list__item} onClick={() => router.push("/sportglasses")}>SPORT GLASSES</li>
-                        <li className={styles.header__list__item} onClick={() => router.push("/childrenglasses")}>CHILDREN</li>
-                        <li className={styles.header__list__item} onClick={() => router.push("/lenses")}>CONTACT LENSES</li>
+                        <li className={`${styles.header__list__item} ${pathname === '/eyeglasses' ? styles.active : ''}`} onClick={() => router.push("/eyeglasses")}>EYEGLASSES</li>
+                        <li className={`${styles.header__list__item} ${pathname === '/sportglasses' ? styles.active : ''}`} onClick={() => router.push("/sportglasses")}>SPORT GLASSES</li>
+                        <li className={`${styles.header__list__item} ${pathname === '/childrenglasses' ? styles.active : ''}`} onClick={() => router.push("/childrenglasses")}>CHILDREN</li>
+                        <li className={`${styles.header__list__item} ${pathname === '/lenses' ? styles.active : ''}`} onClick={() => router.push("/lenses")}>CONTACT LENSES</li>
                     </ul>
                     <div className={styles.header__account}>
                         <div className={styles.header__account__mypfofile}>
@@ -87,16 +88,16 @@ const Header = () => {
                                      router.push(pathToAccount ? "/account" : "/login")
                                      setMenu(true)
                                  }}>{pathToAccount ? "ACCOUNT" : "LOGIN"}</div>
-                            <div className={styles.headerMobile__list__item}
+                            <div className={`${styles.headerMobile__list__item} ${pathname === '/sunglasses' ? styles.active : ''}`}
                                  onClick={() => {
                                      router.push('/sunglasses')
                                      setMenu(true)
                                  }}>SUNGLASSES
                             </div>
-                            <div className={styles.header__list__item} onClick={() => router.push("/eyeglasses")}>EYEGLASSES</div>
-                            <div className={styles.header__list__item} onClick={() => router.push("/sportglasses")}>SPORT GLASSES</div>
-                            <div className={styles.header__list__item} onClick={() => router.push("/childrenglasses")}>CHILDREN</div>
-                            <div className={styles.header__list__item} onClick={() => router.push("/lenses")}>CONTACT LENSES</div>
+                            <div className={`${styles.headerMobile__list__item} ${pathname === '/eyeglasses' ? styles.active : ''}`} onClick={() => { router.push("/eyeglasses"); setMenu(true); }}>EYEGLASSES</div>
+                            <div className={`${styles.headerMobile__list__item} ${pathname === '/sportglasses' ? styles.active : ''}`} onClick={() => { router.push("/sportglasses"); setMenu(true); }}>SPORT GLASSES</div>
+                            <div className={`${styles.headerMobile__list__item} ${pathname === '/childrenglasses' ? styles.active : ''}`} onClick={() => { router.push("/childrenglasses"); setMenu(true); }}>CHILDREN</div>
+                            <div className={`${styles.headerMobile__list__item} ${pathname === '/lenses' ? styles.active : ''}`} onClick={() => { router.push("/lenses"); setMenu(true); }}>CONTACT LENSES</div>
                         </div>
                     </div>
                 </div>
