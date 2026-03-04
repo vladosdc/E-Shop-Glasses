@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+/* ========================================================
+   МИРНЫЙ ДОГОВОР С GOOGLE TRANSLATE 🏳️
+   ======================================================== */
+
+/* Прячем только оригинальный выпадающий список Гугла (наш красивый селект оставляем) */
+#hidden_google_translate {
+    display: none !important;
+}
+
+/* МАГИЯ: Когда Гугл переводит сайт, он добавляет класс translated-ltr.
+   Мы используем это, чтобы сдвинуть нашу шапку вниз на 40px! */
+html.translated-ltr .global-header-pc,
+html.translated-ltr .global-header-mobile {
+    top: 40px !important;
+    transition: top 0.3s ease !important;
+}
+
+/* Добавляем плавность для возврата наверх */
+.global-header-pc,
+.global-header-mobile {
+    transition: top 0.3s ease !important;
+}
+
+/* Убираем бесячие желтые всплывающие подсказки при наведении на переведенный текст */
+#goog-gt-tt, .goog-te-balloon-frame {
+    display: none !important;
+}
+.goog-text-highlight {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}

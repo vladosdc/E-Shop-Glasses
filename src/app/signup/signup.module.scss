@@ -1,0 +1,116 @@
+.signup {
+  margin: 120px 7px 20px;
+
+  &__text {
+    font-size: 23px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  &__line__textor__block {
+    display: flex;
+    justify-content: center;
+    opacity: 0.4;
+  }
+
+  &__textor {
+    padding: 0 10px;
+    font-weight: 600;
+
+  }
+
+  &__line {
+    width: 170px;
+    border-top: 2px solid black;
+    margin-top: 25px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+
+
+    &__input {
+      height: 42px;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      font-size: 16px;
+    }
+    &__create__button {
+      margin-bottom: 10px;
+      color: white;
+      background-color: #8E0F1B;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    &__input__password__block {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 10px;
+      max-width: 400px;
+      height: 30px;
+
+    }
+
+    &__password__status__img {
+      cursor: pointer;
+      position: relative;
+      bottom: 55px;
+    }
+
+
+
+  }
+
+  .google {
+    display: flex;
+    margin-top: 5px;
+    width: 100%;
+    padding: 0 20px;
+
+    &__login__button {
+      margin: 0 auto;
+      display: flex;
+      gap: 5px;
+      font-size: 18px;
+      font-weight: 500;
+      justify-content: center;
+      align-items: center;
+      width: 400px;
+      height: 40px;
+      background-color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+
+    }
+  }
+
+
+
+}
+
+//@media screen and (max-width: 1120px) {
+//  .signup {
+//
+//  }
+//}

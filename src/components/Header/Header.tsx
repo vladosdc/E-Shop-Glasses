@@ -1,0 +1,115 @@
+"use client"
+import Image from "next/image";
+import logoImg from "../../assets/images/icons/logo.png"
+import myProfileImg from "../../assets/images/icons/user.png"
+import mobileMenuImg from '@/assets/images/icons/menu.png'
+import mobileMenuCloseImg from  '@/assets/images/icons/closeMenu.png'
+import styles from './header.module.scss'
+import Link from "next/link";
+import {useEffect, useState} from "react";
+import {onAuthStateChanged} from "@firebase/auth";
+import {auth} from "@/firebase/firebase";
+import {useRouter, usePathname} from "next/navigation";
+import GoogleTranslate from "../GoogleTranslate/GoogleTranslate";
+
+const Header = () => {
+
+    const router = useRouter()
+    const pathname = usePathname()
+    const [pathToAccount, setPathToAccount] = useState(false)
+    const [menu, setMenu] = useState<boolean>(true)
+
+    useEffect(() => {
+        const checkAuth = async () => {
+            const user = await onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    setPathToAccount(true)
+                }
+            });
+        }
+        checkAuth()
+
+    }, [])
+
+    const menuStatus = () => {
+        if (!menu) {
+            setMenu(true)
+        } else {
+            setMenu(false)
+        }
+    }
+
+    return (
+        <>
+            {/*PC Menu*/}
+            <div className={`global-header-pc ${styles.header}`}>
+                <div className={styles.header__container}>
+                    <div className={styles.header__logo} onClick={() => router.push("/")}>
+                            <Image className={styles.header__logo__img} src={logoImg} alt="logo" width={80}
+                                   quality={100}
+                                   priority={true}/>
+                    </div>
+                    <ul className={styles.header__list}>
+                        <li className={`${styles.header__list__item} ${pathname === '/sunglasses' ? styles.active : ''}`}
+                            onClick={() => router.push('/sunglasses')}>SUNGLASSES
+                        </li>
+                        <li className={`${styles.header__list__item} ${pathname === '/eyeglasses' ? styles.active : ''}`} onClick={() => router.push("/eyeglasses")}>EYEGLASSES</li>
+                        <li className={`${styles.header__list__item} ${pathname === '/sportglasses' ? styles.active : ''}`} onClick={() => router.push("/sportglasses")}>SPORT GLASSES</li>
+                        <li className={`${styles.header__list__item} ${pathname === '/childrenglasses' ? styles.active : ''}`} onClick={() => router.push("/childrenglasses")}>CHILDREN</li>
+                        <li className={`${styles.header__list__item} ${pathname === '/lenses' ? styles.active : ''}`} onClick={() => router.push("/lenses")}>CONTACT LENSES</li>
+                    </ul>
+                    
+                    {/* ПК-версия аккаунта и переводчика */}
+                    <div className={styles.header__account}>
+                        <GoogleTranslate />
+                        <div className={styles.header__account__mypfofile}>
+                            <Image className={styles.header__account__myprofile__img} src={myProfileImg}
+                                   alt="my profile" width={22} quality={100} priority={true}
+                                   onClick={() => router.push(pathToAccount ? "/account" : "/login")}/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/*Mobile Menu*/}
+            <div className={`global-header-mobile ${styles.headerMobile}`}>
+                <div className={styles.headerMobile__container}>
+                    <div className={styles.menuMobile}>
+                        <Image className={styles.menuImg} src={menu ? mobileMenuImg : mobileMenuCloseImg} quality={100} priority={true} alt="menu"
+                               width={30} onClick={menuStatus}></Image>
+                        <div className={menu ? styles.listItemsNoShow : styles.listItems}>
+                            
+                            {/* Мобильная версия переводчика */}
+                            <GoogleTranslate />
+
+                            <div className={styles.headerMobile__list__item}
+                                 onClick={() => {
+                                     router.push('/')
+                                     setMenu(true)
+                                 }}>
+                                HOME
+                            </div>
+                            <div className={styles.headerMobile__account}
+                                 onClick={() => {
+                                     router.push(pathToAccount ? "/account" : "/login")
+                                     setMenu(true)
+                                 }}>{pathToAccount ? "ACCOUNT" : "LOGIN"}</div>
+                            <div className={`${styles.headerMobile__list__item} ${pathname === '/sunglasses' ? styles.active : ''}`}
+                                 onClick={() => {
+                                     router.push('/sunglasses')
+                                     setMenu(true)
+                                 }}>SUNGLASSES
+                            </div>
+                            <div className={`${styles.headerMobile__list__item} ${pathname === '/eyeglasses' ? styles.active : ''}`} onClick={() => { router.push("/eyeglasses"); setMenu(true); }}>EYEGLASSES</div>
+                            <div className={`${styles.headerMobile__list__item} ${pathname === '/sportglasses' ? styles.active : ''}`} onClick={() => { router.push("/sportglasses"); setMenu(true); }}>SPORT GLASSES</div>
+                            <div className={`${styles.headerMobile__list__item} ${pathname === '/childrenglasses' ? styles.active : ''}`} onClick={() => { router.push("/childrenglasses"); setMenu(true); }}>CHILDREN</div>
+                            <div className={`${styles.headerMobile__list__item} ${pathname === '/lenses' ? styles.active : ''}`} onClick={() => { router.push("/lenses"); setMenu(true); }}>CONTACT LENSES</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default Header
