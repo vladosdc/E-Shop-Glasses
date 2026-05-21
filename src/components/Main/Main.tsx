@@ -25,7 +25,7 @@ const Main = () => {
                     <p className={styles.quote1}>"Clothing affects everything from a person's sense of humor to their
                         perception of themselves. People should look seductive when they wear Dolce & Gabbana"<br/> -
                         Dolce & Gabbana</p>
-                        <button className={styles.button__sunglasses__buy} onClick={() => router.push("/sunglasses")}><span
+                        <button className={styles.button__sunglasses__buy} onClick={() => router.push("/sunglasses/2")}><span
                             className={styles.button__sunglasses__buy__textBtn}>Buy</span><p
                             className={styles.button__sunglasses__buy__company}>Dolce & Gabbana</p></button>
                     <h5>OR</h5>
@@ -45,12 +45,12 @@ const Main = () => {
                     <h2 className={styles.title}>Eyeglasses</h2>
                     <p className={styles.quote2}>"I know what women look good in. I don't think the rules ever
                         change."<br/>- Michael Kors</p>
-                        <button className={styles.button__sunglasses__buy} onClick={() => router.push("/eyeglasses")}><span
+                        <button className={styles.button__sunglasses__buy} onClick={() => router.push("/eyeglasses/21")}><span
                             className={styles.button__sunglasses__buy__textBtn}>Buy</span><p
                             className={styles.button__sunglasses__buy__company}>Michael Kors</p></button>
                     <h5>OR</h5>
                         <div className={styles.buttonBlock}>
-                            <button className={styles.button__sunglasses__find} onClick={() => router.push("/eyeglasses")}>FIND YOUR IDEAL EYEGLASSES</button>
+                            <button className={styles.button__sunglasses__find} onClick={() => router.push("/eyeglasses/")}>FIND YOUR IDEAL EYEGLASSES</button>
                         </div>
                 </Carousel.Caption>
             </Carousel.Item>

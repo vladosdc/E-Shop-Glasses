@@ -59,7 +59,7 @@ const Header = () => {
                         <li className={`${styles.header__list__item} ${pathname === '/lenses' ? styles.active : ''}`} onClick={() => router.push("/lenses")}>CONTACT LENSES</li>
                     </ul>
                     
-                    {/* ПК-версия аккаунта и переводчика */}
+                    {/* PC version of the account and translator */}
                     <div className={styles.header__account}>
                         <GoogleTranslate />
                         <div className={styles.header__account__mypfofile}>
@@ -79,7 +79,7 @@ const Header = () => {
                                width={30} onClick={menuStatus}></Image>
                         <div className={menu ? styles.listItemsNoShow : styles.listItems}>
                             
-                            {/* Мобильная версия переводчика */}
+                            {/* Mobile version of the translator */}
                             <GoogleTranslate />
 
                             <div className={styles.headerMobile__list__item}

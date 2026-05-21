@@ -16,11 +16,9 @@ const FilterIcon = () => (
 
 export default function Sunglasses() {
     const router = useRouter();
-    
-    // Стейты для Offcanvas (Фильтры)
+
     const [showFilterCanvas, setShowFilterCanvas] = useState(false);
-    
-    // Стейты для самих фильтров
+
     const [filterBrand, setFilterBrand] = useState('');
     const [filterColor, setFilterColor] = useState('');
     const [sortPrice, setSortPrice] = useState('');
@@ -46,7 +44,6 @@ export default function Sunglasses() {
             return 0;
         });
 
-    // Функция перехода на страницу товара
     const goToProduct = (id: number) => {
         router.push(`/sunglasses/${id}`);
     };
@@ -59,28 +56,26 @@ export default function Sunglasses() {
                     Filter
                 </Button>
                 <div className={styles.results__count}>
-                   {filteredAndSortedData.length} Results
+                    <span className="notranslate" translate="no">{filteredAndSortedData.length} </span> Results
                 </div>
             </div>
 
             <div className={styles.sunglasses__container}>
                 {filteredAndSortedData.map((sunglasses) => (
                     <div key={sunglasses.id} className={styles.sunglasses__card}>
-                        {/* Клик по картинке */}
-                        <Image 
-                            src={sunglasses.photo} 
-                            alt={`${sunglasses.name} photo`} 
-                            className={styles.sunglasses__photo} 
-                            width={178} 
-                            height={178} 
-                            quality={100} 
+                        <Image
+                            src={sunglasses.photo}
+                            alt={`${sunglasses.name} photo`}
+                            className={styles.sunglasses__photo}
+                            width={178}
+                            height={178}
+                            quality={100}
                             onClick={() => goToProduct(sunglasses.id)}
                             style={{ cursor: 'pointer' }}
                         />
                         <p className={styles.sunglasses__name}>{sunglasses.name}</p>
                         <div className={styles.sunglasses__price__cart__block}>
                             <p>€{sunglasses.price}</p>
-                            {/* Переименовали кнопку и повесили переход */}
                             <Button className={styles.sunglasses__buy__btn} onClick={() => goToProduct(sunglasses.id)} variant="light">
                                 View & Buy
                                 <Image className={styles.sunglasses__cart} src={cart} alt="cart" quality={100} width={30} />
@@ -125,11 +120,11 @@ export default function Sunglasses() {
                     </Form.Group>
 
                     <div className={styles.offcanvas__actions}>
-                         <Button variant="outline-dark" onClick={resetFilters} className="mb-2 w-100">
+                        <Button variant="outline-dark" onClick={resetFilters} className="mb-2 w-100">
                             Reset
                         </Button>
                         <Button variant="dark" onClick={handleCloseFilter} className="w-100">
-                            Show results ({filteredAndSortedData.length})
+                            Show results (<span className="notranslate" translate="no">{filteredAndSortedData.length}</span>)
                         </Button>
                     </div>
                 </Offcanvas.Body>

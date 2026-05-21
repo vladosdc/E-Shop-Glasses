@@ -16,11 +16,11 @@ const FilterIcon = () => (
 
 export default function Eyeglasses() {
     const router = useRouter();
-    
-    // Стейты для Offcanvas (Фильтры)
+
+    // States for Offcanvas (Filters)
     const [showFilterCanvas, setShowFilterCanvas] = useState(false);
-    
-    // Стейты для самих фильтров
+
+    // States for the filters themselves
     const [filterBrand, setFilterBrand] = useState('');
     const [filterColor, setFilterColor] = useState('');
     const [sortPrice, setSortPrice] = useState('');
@@ -34,11 +34,11 @@ export default function Eyeglasses() {
         setSortPrice('');
     }
 
-    // Вытягиваем уникальные бренды и цвета из нового data.json
+    // Fetching unique brands and colors
     const uniqueBrands = Array.from(new Set(data.eyeglasses.map(item => (item as any).brand))).filter(Boolean);
     const uniqueColors = Array.from(new Set(data.eyeglasses.map(item => (item as any).color))).filter(Boolean);
 
-    // Фильтруем и сортируем
+    // Filtering and sorting
     const filteredAndSortedData = data.eyeglasses
         .filter(item => (filterBrand ? (item as any).brand === filterBrand : true))
         .filter(item => (filterColor ? (item as any).color === filterColor : true))
@@ -48,35 +48,32 @@ export default function Eyeglasses() {
             return 0;
         });
 
-    // Функция перехода на страницу товара
+    // Function for navigating to the product page
     const goToProduct = (id: number) => {
         router.push(`/eyeglasses/${id}`);
     };
 
     return (
         <div className={styles.eyeglasses}>
-            {/* Верхняя панель с кнопкой фильтра */}
             <div className={styles.top__bar}>
                 <Button variant="light" className={styles.filter__trigger__btn} onClick={handleShowFilter}>
                     <FilterIcon />
                     Filter
                 </Button>
                 <div className={styles.results__count}>
-                   {filteredAndSortedData.length} Results
+                    <span className="notranslate" translate="no">{filteredAndSortedData.length} </span> Results
                 </div>
             </div>
-
-            {/* Контейнер с карточками */}
             <div className={styles.eyeglasses__container}>
                 {filteredAndSortedData.map((eyeglasses) => (
                     <div key={eyeglasses.id} className={styles.eyeglasses__card}>
-                        <Image 
-                            src={eyeglasses.photo} 
-                            alt={`${eyeglasses.name} photo`} 
-                            className={styles.eyeglasses__photo} 
-                            width={210} 
-                            height={170} 
-                            quality={100} 
+                        <Image
+                            src={eyeglasses.photo}
+                            alt={`${eyeglasses.name} photo`}
+                            className={styles.eyeglasses__photo}
+                            width={210}
+                            height={170}
+                            quality={100}
                             onClick={() => goToProduct(eyeglasses.id)}
                             style={{ cursor: 'pointer', objectFit: 'contain' }}
                         />
@@ -92,7 +89,7 @@ export default function Eyeglasses() {
                 ))}
             </div>
 
-            {/* Боковая панель фильтров */}
+            {/* Panels Filter */}
             <Offcanvas show={showFilterCanvas} onHide={handleCloseFilter} placement="end">
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title className="fw-bold">Filter</Offcanvas.Title>
@@ -128,11 +125,11 @@ export default function Eyeglasses() {
                     </Form.Group>
 
                     <div className={styles.offcanvas__actions}>
-                         <Button variant="outline-dark" onClick={resetFilters} className="mb-2 w-100">
+                        <Button variant="outline-dark" onClick={resetFilters} className="mb-2 w-100">
                             Reset
                         </Button>
                         <Button variant="dark" onClick={handleCloseFilter} className="w-100">
-                            Show results ({filteredAndSortedData.length})
+                            Show results (<span className="notranslate" translate="no">{filteredAndSortedData.length}</span>)
                         </Button>
                     </div>
                 </Offcanvas.Body>

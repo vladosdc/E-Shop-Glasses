@@ -17,10 +17,9 @@ const FilterIcon = () => (
 export default function Lenses() {
     const router = useRouter();
     
-    // Стейты для Offcanvas (Фильтры)
+
     const [showFilterCanvas, setShowFilterCanvas] = useState(false);
     
-    // Стейты для фильтров (Без цвета, так как это линзы)
     const [filterBrand, setFilterBrand] = useState('');
     const [sortPrice, setSortPrice] = useState('');
 
@@ -57,8 +56,8 @@ export default function Lenses() {
                     <FilterIcon />
                     Filter
                 </Button>
-                <div className={styles.results__count}>
-                   {filteredAndSortedData.length} Results
+                 <div className={styles.results__count}>
+                    <span className="notranslate" translate="no">{filteredAndSortedData.length} </span> Results
                 </div>
             </div>
 
@@ -103,9 +102,6 @@ export default function Lenses() {
                             ))}
                         </Form.Select>
                     </Form.Group>
-
-                    {/* Фильтр по цвету намеренно убран */}
-
                     <Form.Group className="mb-5">
                         <Form.Label className="fw-bold">Price</Form.Label>
                         <Form.Select onChange={(e) => setSortPrice(e.target.value)} value={sortPrice}>
@@ -120,7 +116,7 @@ export default function Lenses() {
                             Reset
                         </Button>
                         <Button variant="dark" onClick={handleCloseFilter} className="w-100">
-                            Show results ({filteredAndSortedData.length})
+                            Show results (<span className="notranslate" translate="no">{filteredAndSortedData.length}</span>)
                         </Button>
                     </div>
                 </Offcanvas.Body>

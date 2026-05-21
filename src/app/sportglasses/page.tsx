@@ -17,10 +17,9 @@ const FilterIcon = () => (
 export default function SportGlasses() {
     const router = useRouter();
     
-    // Стейты для Offcanvas (Фильтры)
+    // States for Offcanvas (Filters)
     const [showFilterCanvas, setShowFilterCanvas] = useState(false);
     
-    // Стейты для самих фильтров
     const [filterBrand, setFilterBrand] = useState('');
     const [filterColor, setFilterColor] = useState('');
     const [sortPrice, setSortPrice] = useState('');
@@ -34,11 +33,9 @@ export default function SportGlasses() {
         setSortPrice('');
     }
 
-    // Вытягиваем уникальные бренды и цвета (появятся, когда добавишь их в data.json)
     const uniqueBrands = Array.from(new Set(data.sportglasses.map(item => (item as any).brand))).filter(Boolean);
     const uniqueColors = Array.from(new Set(data.sportglasses.map(item => (item as any).color))).filter(Boolean);
 
-    // Фильтруем и сортируем
     const filteredAndSortedData = data.sportglasses
         .filter(item => (filterBrand ? (item as any).brand === filterBrand : true))
         .filter(item => (filterColor ? (item as any).color === filterColor : true))
@@ -48,25 +45,24 @@ export default function SportGlasses() {
             return 0;
         });
 
-    // Функция перехода на страницу товара
+
     const goToProduct = (id: number) => {
         router.push(`/sportglasses/${id}`);
     };
 
     return (
         <div className={styles.sportglasses}>
-            {/* Верхняя панель с кнопкой фильтра */}
+
             <div className={styles.top__bar}>
                 <Button variant="light" className={styles.filter__trigger__btn} onClick={handleShowFilter}>
                     <FilterIcon />
                     Filter
                 </Button>
-                <div className={styles.results__count}>
-                   {filteredAndSortedData.length} Results
+                 <div className={styles.results__count}>
+                    <span className="notranslate" translate="no">{filteredAndSortedData.length} </span> Results
                 </div>
             </div>
 
-            {/* Контейнер с карточками */}
             <div className={styles.sportglasses__container}>
                 {filteredAndSortedData.map((sportglasses) => (
                     <div key={sportglasses.id} className={styles.sportglasses__card}>
@@ -92,7 +88,7 @@ export default function SportGlasses() {
                 ))}
             </div>
 
-            {/* Боковая панель фильтров */}
+            {/* Panels Filter */}
             <Offcanvas show={showFilterCanvas} onHide={handleCloseFilter} placement="end">
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title className="fw-bold">Filter</Offcanvas.Title>
@@ -131,8 +127,8 @@ export default function SportGlasses() {
                          <Button variant="outline-dark" onClick={resetFilters} className="mb-2 w-100">
                             Reset
                         </Button>
-                        <Button variant="dark" onClick={handleCloseFilter} className="w-100">
-                            Show results ({filteredAndSortedData.length})
+                       <Button variant="dark" onClick={handleCloseFilter} className="w-100">
+                            Show results (<span className="notranslate" translate="no">{filteredAndSortedData.length}</span>)
                         </Button>
                     </div>
                 </Offcanvas.Body>

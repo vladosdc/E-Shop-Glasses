@@ -16,11 +16,10 @@ const FilterIcon = () => (
 
 export default function ChildrenGlasses() {
     const router = useRouter();
-    
-    // Стейты для Offcanvas (Фильтры)
+
     const [showFilterCanvas, setShowFilterCanvas] = useState(false);
-    
-    // Стейты для самих фильтров
+
+    // States for the filters themselves
     const [filterBrand, setFilterBrand] = useState('');
     const [filterColor, setFilterColor] = useState('');
     const [sortPrice, setSortPrice] = useState('');
@@ -34,11 +33,10 @@ export default function ChildrenGlasses() {
         setSortPrice('');
     }
 
-    // Вытягиваем уникальные бренды и цвета
     const uniqueBrands = Array.from(new Set(data.childrenglasses.map(item => item.brand))).filter(Boolean);
     const uniqueColors = Array.from(new Set(data.childrenglasses.map(item => item.color))).filter(Boolean);
 
-    // Фильтруем и сортируем
+
     const filteredAndSortedData = data.childrenglasses
         .filter(item => (filterBrand ? item.brand === filterBrand : true))
         .filter(item => (filterColor ? item.color === filterColor : true))
@@ -48,34 +46,32 @@ export default function ChildrenGlasses() {
             return 0;
         });
 
-    // Функция перехода на страницу товара
     const goToProduct = (id: number) => {
         router.push(`/childrenglasses/${id}`);
     };
 
     return (
         <div className={styles.childrenglasses}>
-            {/* Верхняя панель с кнопкой фильтра */}
             <div className={styles.top__bar}>
                 <Button variant="light" className={styles.filter__trigger__btn} onClick={handleShowFilter}>
                     <FilterIcon />
                     Filter
                 </Button>
                 <div className={styles.results__count}>
-                   {filteredAndSortedData.length} Results
+                    <span className="notranslate" translate="no">{filteredAndSortedData.length} </span> Results
                 </div>
             </div>
 
             <div className={styles.childrenglasses__container}>
                 {filteredAndSortedData.map((childrenglasses) => (
                     <div key={childrenglasses.id} className={styles.childrenglasses__card}>
-                        <Image 
-                            src={childrenglasses.photo} 
-                            alt={`${childrenglasses.name} photo`} 
-                            className={styles.childrenglasses__photo} 
-                            width={210} 
-                            height={170} 
-                            quality={100} 
+                        <Image
+                            src={childrenglasses.photo}
+                            alt={`${childrenglasses.name} photo`}
+                            className={styles.childrenglasses__photo}
+                            width={210}
+                            height={170}
+                            quality={100}
                             onClick={() => goToProduct(childrenglasses.id)}
                             style={{ cursor: 'pointer', objectFit: 'contain' }}
                         />
@@ -126,11 +122,11 @@ export default function ChildrenGlasses() {
                     </Form.Group>
 
                     <div className={styles.offcanvas__actions}>
-                         <Button variant="outline-dark" onClick={resetFilters} className="mb-2 w-100">
+                        <Button variant="outline-dark" onClick={resetFilters} className="mb-2 w-100">
                             Reset
                         </Button>
                         <Button variant="dark" onClick={handleCloseFilter} className="w-100">
-                            Show results ({filteredAndSortedData.length})
+                            Show results (<span className="notranslate" translate="no">{filteredAndSortedData.length}</span>)
                         </Button>
                     </div>
                 </Offcanvas.Body>

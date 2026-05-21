@@ -25,7 +25,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/prada-pr-58ys-1bo0b7-57-15.jpg?alt=media&token=2394b855-0c22-48b6-aeb0-dce993c8ecf8",
       "price": 259.88,
       "brand": "Prada",
-      "color": "Black"
+      "color": "Gold"
     },
     {
       "id": 4,
@@ -43,7 +43,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/oakley-kato-oo9455m-24-01-49.jpg?alt=media&token=4d3a64ce-05f5-4d0a-9f43-f5e278af522f",
       "price": 254.10,
       "brand": "Oakley",
-      "color": "Black"
+      "color": "Gold"
     },
     {
       "id": 6,
@@ -79,7 +79,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/oakley-kato-oo9455m-03-01-49.jpg?alt=media&token=2aacce7f-e9e9-4f36-b42a-8907561b46c2",
       "price": 237.60,
       "brand": "Oakley",
-      "color": "White"
+      "color": "Blue"
     },
     {
       "id": 10,
@@ -142,7 +142,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/versace-ve2199-100187-56-18.jpg?alt=media&token=b8405879-ed1f-4426-9e4c-2f4868d0d6c9",
       "price": 176.00,
       "brand": "Versace",
-      "color": "Grey"
+      "color": "Black"
     },
     {
       "id": 17,
@@ -169,7 +169,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/yves-saint-laurent-sl-572-003-50-22.jpg?alt=media&token=d11f59b1-1250-452e-bc0d-a24d73638c40",
       "price": 366.96,
       "brand": "Yves Saint Laurent",
-      "color": "Brown"
+      "color": "White"
     },
     {
       "id": 20,
@@ -198,7 +198,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/glare-alfonso-160-48-20.jpg?alt=media&token=6743a49c-8f63-417d-a5bc-e28e3760fe31",
       "price": 151.90,
       "brand": "Glare",
-      "color": "Black"
+      "color": "Green"
     },
     {
       "id": 23,
@@ -216,7 +216,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/glare-marco-918-53-19.jpg?alt=media&token=2cdad11b-953d-43a1-93bb-324314e65485",
       "price": 213.50,
       "brand": "Glare",
-      "color": "Grey"
+      "color": "Blue"
     },
     {
       "id": 25,
@@ -234,7 +234,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/glare-masha-ii-915-50-19.jpg?alt=media&token=91b720a3-5d55-4ae7-b293-d040004e5900",
       "price": 213.50,
       "brand": "Glare",
-      "color": "Blue"
+      "color": "Green"
     },
     {
       "id": 27,
@@ -252,7 +252,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/glare-nola-017-49-22.jpg?alt=media&token=d7a22303-3764-43d4-8a66-24224819662e",
       "price": 151.90,
       "brand": "Glare",
-      "color": "Gold"
+      "color": "Red"
     },
     {
       "id": 29,
@@ -270,7 +270,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/hugo-boss-hg-1198-dcd-56-17.jpg?alt=media&token=eef1d83b-73a7-4932-8af0-63e1682ec794",
       "price": 113.25,
       "brand": "Hugo Boss",
-      "color": "Black"
+      "color": "Blue"
     },
     {
       "id": 31,
@@ -315,7 +315,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/tom-ford-ft5868b-092-51-18.jpg?alt=media&token=0f2703d4-cdad-4067-b744-4e4896cb04c7",
       "price": 913.25,
       "brand": "Tom Ford",
-      "color": "Brown"
+      "color": "Blue"
     }
   ],
   "sportglasses": [
@@ -326,7 +326,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/bolle-c-shifter-bs005006-creator-green-matte-59-18.jpg?alt=media&token=f1583690-baa1-4b25-9880-4d4fdf941229",
       "price": 1513.25,
       "brand": "Bollé",
-      "color": "Green"
+      "color": "White"
     },
     {
       "id": 38,
@@ -344,7 +344,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/bolle-fenix-bs136006-titanim-matte-61-10.jpg?alt=media&token=91619d1b-d346-4be8-839f-854be188fcb9",
       "price": 32.12,
       "brand": "Bollé",
-      "color": "Grey"
+      "color": "Blue"
     },
     {
       "id": 40,
@@ -371,7 +371,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/oakley-evzero-blades-oo9454-22-01-38.jpg?alt=media&token=1302ccdf-186c-48e5-919f-ff47b2822cd7",
       "price": 126.73,
       "brand": "Oakley",
-      "color": "Black"
+      "color": "Green"
     },
     {
       "id": 43,
@@ -389,7 +389,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/oakley-holbrook-oo9102-e4-57-18.jpg?alt=media&token=f97cc19f-7220-4c40-815b-c095cdc3a8a3",
       "price": 111.75,
       "brand": "Oakley",
-      "color": "Black"
+      "color": "Green"
     },
     {
       "id": 45,
@@ -398,7 +398,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/oakley-resistor-oj9010-13-00-23.jpg?alt=media&token=ca403083-3dcd-41b1-9832-2765f5db8c33",
       "price": 75.11,
       "brand": "Oakley",
-      "color": "Yellow"
+      "color": "Black"
     },
     {
       "id": 46,
@@ -407,7 +407,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/oakley-sylas-oo9448-34-60-17.jpg?alt=media&token=ad36d9a0-cd98-433e-9669-cfd2ecfb46d3",
       "price": 133.50,
       "brand": "Oakley",
-      "color": "Grey"
+      "color": "Blue"
     }
   ],
   "childrenglasses": [
@@ -418,7 +418,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/chloe-ch0163-010-53-18.jpg?alt=media&token=4d577986-61d6-4f9f-80e9-5d963e9ed1e5",
       "price": 202.50,
       "brand": "Chloé",
-      "color": "Pink"
+      "color": "White"
     },
     {
       "id": 48,
@@ -427,7 +427,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/mr-wonderful-mw79030-100-53-18.jpg?alt=media&token=fe242206-d29c-43a4-96a5-90085bfd1e17",
       "price": 108.00,
       "brand": "Mr Wonderful",
-      "color": "Blue"
+      "color": "Pink"
     },
     {
       "id": 49,
@@ -445,7 +445,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/nanovista-clipping-30-nao3140344-rosa-cristal-rosa-claro-44-14.jpg?alt=media&token=70aa5eb6-7485-452d-b98b-99e99e68ea12",
       "price": 103.70,
       "brand": "Nanovista",
-      "color": "Pink"
+      "color": "Red"
     },
     {
       "id": 51,
@@ -481,7 +481,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/nanovista-pixel-clic-30-nao3070646sc-bicolor-negro-azul-46-14.jpg?alt=media&token=e7d02154-6bd6-40b2-b4a6-d3e844b62ed5",
       "price": 123.12,
       "brand": "Nanovista",
-      "color": "Black"
+      "color": "Pink"
     },
     {
       "id": 55,
@@ -499,7 +499,7 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/e-shop-glasses-8395e.appspot.com/o/ver-sport-hercules-evo-vx-marino-mate-lima-55-19.jpg?alt=media&token=ed485d4b-5d0e-4a63-8cb2-1532bc761bbc",
       "price": 108.00,
       "brand": "Ver Sport",
-      "color": "Blue"
+      "color": "Black"
     }
   ],
   "lenses": [

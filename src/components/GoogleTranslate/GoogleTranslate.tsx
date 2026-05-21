@@ -8,7 +8,7 @@ const GoogleTranslate = () => {
     useEffect(() => {
         setIsMounted(true);
 
-        // При загрузке страницы проверяем куки Гугла, чтобы наш селект показывал правильный язык
+
         const match = document.cookie.match(/(?:^|;)\s*googtrans=([^;]*)/);
         if (match && match[1]) {
             const lang = match[1].split('/')[2];
@@ -25,7 +25,6 @@ const GoogleTranslate = () => {
                 new (window as any).google.translate.TranslateElement(
                     {
                         pageLanguage: 'en',
-                        // Убрали 'en' отсюда, Гуглу он тут не нужен
                         includedLanguages: 'ru,uk,de,fr,es,it,pl', 
                         autoDisplay: false,
                     },
@@ -63,22 +62,13 @@ const GoogleTranslate = () => {
     const changeLanguage = (lang: string) => {
         setCurrentLang(lang);
         window.dispatchEvent(new CustomEvent('syncLang', { detail: lang }));
-        
-        // ==========================================
-        // АБСОЛЮТНЫЙ СБРОС: Возврат на English
-        // ==========================================
         if (lang === 'en') {
-            // Удаляем все куки Гугла (чтобы он забыл, что мы переводили сайт)
             document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.${window.location.hostname}; path=/;`;
             document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=${window.location.hostname}; path=/;`;
-            
-            // Быстро перезагружаем страницу (вычищает все баги DOM и возвращает шапку на место)
             window.location.reload();
             return;
         }
-
-        // Если выбран другой язык — командуем скрытому селекту Гугла перевести
         const googleSelect = document.querySelector(".goog-te-combo") as HTMLSelectElement;
         if (googleSelect) {
             googleSelect.value = lang; 
